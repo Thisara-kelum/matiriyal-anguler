@@ -1,0 +1,273 @@
+
+<mat-progress-bar mode="query"></mat-progress-bar>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Three star Auto <br>service</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="main-home">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="services">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="booking">Booking</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="Easy-booking">E-Booking</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact">Contact Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="news">News & Blog</a>
+          </li>
+
+        </ul>
+
+        <a href="/admin-login">
+            <button type="button" class="btn btn-primary"> Login</button>
+          </a>
+         &nbsp;
+          <a href="new-member-register">
+            <button type="button" class="btn btn-secondary">New Member Register</button>
+          </a>
+
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+
+
+
+
+
+
+
+
+
+<app-navbar></app-navbar>
+<main class="container-fluid p-0">
+
+    <!-- banner start -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" *ngFor="let data of bannerImgs">
+                <img src="{{data.img}}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- banner end -->
+
+    <!-- categoris box start  -->
+
+    <div class="container mt-5 mb-5">
+
+        <div class="row categorisBox">
+
+            <div class="col-lg-3 col-6 categorisContent" *ngFor="let data of getCategorisData">
+                <a [routerLink]="['product-page',data.code]">
+                    <img src="{{data.img}}">
+                    <h4>{{data.name}}</h4>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- categoris box end  -->
+
+
+    <!-- show product start  -->
+
+        <!-- show appliance product  -->
+
+            <div class="container mt-3 mb-3">
+
+                <div class="row productBox">
+
+                    <p>
+                        <a class="float-start link-offset-3" [routerLink]="['/product-page','appliances']">LUBRICANTS</a>
+                        <a class="float-end" [routerLink]="['/product-page','appliances']"><i class="bi bi-arrow-right-circle"></i></a>
+                    </p>
+
+                    <div class="col-lg-3 mt-5"  *ngFor="let data of getApplianceProductData;index as i">
+
+                        <a [routerLink]="['/product-detail',data.pdCategory,data.pdId]" class="productLink">
+                            <div class="productContent" *ngIf="i<=3">
+                                <div class="productImg">
+                                <img src="{{data.pdImg}}">
+                                </div>
+                                <h4>{{data.pdName}}</h4>
+                            </div>
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        <!-- show appliance product  -->
+
+
+                    <!-- show fashion product  -->
+
+                    <div class="container mt-3 mb-3">
+
+                        <div class="row productBox">
+
+                            <p>
+                                <a class="float-start link-offset-3" [routerLink]="['/product-page','fashion']">CAR CARE</a>
+                                <a class="float-end" [routerLink]="['/product-page','fashion']"><i class="bi bi-arrow-right-circle"></i></a>
+                            </p>
+
+                            <div class="col-lg-3 mt-5"  *ngFor="let data of getFashionProductData;index as i">
+
+                                <a [routerLink]="['/product-detail',data.pdCategory,data.pdId]" class="productLink">
+                                    <div class="productContent" *ngIf="i<=3">
+                                        <div class="productImg">
+                                        <img src="{{data.pdImg}}">
+                                        </div>
+                                        <h4>{{data.pdName}}</h4>
+                                    </div>
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                <!-- show fashion product  -->
+
+
+
+    <!-- show product end  -->
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+  <!-- Footer Start -->
+  <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5 px-lg-5">
+          <div class="row g-5">
+              <div class="col-md-6 col-lg-3">
+                  <h4 class="text-white mb-4">Address</h4>
+                  <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                  <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                  <p><i class="fa fa-envelope me-3"></i>info&#64;example.com</p>
+                  <div class="d-flex pt-2">
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                  <h4 class="text-white mb-4">Quick Link</h4>
+                  <a class="btn btn-link" href="">About Us</a>
+                  <a class="btn btn-link" href="">Contact Us</a>
+                  <a class="btn btn-link" href="">Privacy Policy</a>
+                  <a class="btn btn-link" href="">Terms & Condition</a>
+                  <a class="btn btn-link" href="">Career</a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                  <h4 class="text-white mb-4">Popular Link</h4>
+                  <a class="btn btn-link" href="">About Us</a>
+                  <a class="btn btn-link" href="">Contact Us</a>
+                  <a class="btn btn-link" href="">Privacy Policy</a>
+                  <a class="btn btn-link" href="">Terms & Condition</a>
+                  <a class="btn btn-link" href="">Career</a>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                  <h4 class="text-white mb-4">Newsletter</h4>
+                  <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                      vulpu
+                  </p>
+                  <div class="position-relative w-100 mt-3">
+                      <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                          placeholder="Your Email" style="height: 48px;">
+                      <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                              class="fa fa-paper-plane text-primary-gradient fs-4"></i></button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="container px-lg-5">
+          <div class="copyright">
+              <div class="row">
+                  <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                      &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+
+                      <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                      Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                  </div>
+                  <div class="col-md-6 text-center text-md-end">
+                      <div class="footer-menu">
+                          <a href="">Home</a>
+                          <a href="">Cookies</a>
+                          <a href="">Help</a>
+                          <a href="">FQAs</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Footer End -->
+</body>

@@ -1,0 +1,167 @@
+/*-------------------- CSS --------------------*/
+/* style.css */
+
+.container{
+   
+    color:transparent;
+    -webkit-text-stroke: 1px #ff0000;
+    background: url(../../assets/images/Backimg/back.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: 0 0;
+    animation: img2 10s linear infinite;
+    left: 2%;
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport width */
+    padding: 0 270px; /* Add padding for better readability */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
+
+
+  @keyframes img2 {
+    100%{
+      background-position: 2000px 0;
+      
+        }
+    }
+    
+    
+    
+    
+    
+    .ONLINE-BOOKINGS {
+      
+    
+      font-size: 76px; /* Set a base font size */
+      line-height: 1; /* Set line height for better readability */
+      font-family: "DM Serif Display";
+      font-weight: 900;
+    }
+    
+    /* Adjustments for smaller screens */
+    @media screen and (max-width: 768px) {
+      .ONLINE-BOOKINGS {
+        font-size: 48px; /* Decrease font size for smaller screens */
+      }
+    }
+  
+
+
+.wrapper{
+    margin: 0;
+    padding: 0;
+    min-height: 50vh;
+    background: #998f8f;
+    left: 15%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 1000px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card{
+    position: relative;
+}
+
+.card .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.4s;
+}
+
+.card .front{
+    position: relative;
+    background: #81afbd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.card:hover .front{
+    transform: translateY(0px);
+
+    box-shadow: 
+        inset  0 0 60px whitesmoke,
+        inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff,
+        inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff,
+                0 0 50px #fff,
+                -10px 0 80px #f0f,
+                10px 0 80px #0ff;
+    
+}
+
+.front .content{
+    opacity: 5;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card:hover .front .content{
+    opacity: 5;
+}
+
+.card .front .content i{
+    font-size: 3rem;
+    display: inline-block;
+}
+.card .front .content h3{
+    font-size: 1rem;
+}
+
+.back{
+    position: relative;
+    background: rgb(111, 150, 194);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 20px 50px #000000cc;
+    transform: translateY(-100px);
+}
+
+.card:hover .back{
+    transform: translateY(0px);
+}
+
+.back p, .back a{
+font-size: 0.8rem;
+margin: 0;
+padding: 0;
+color: #000000;
+}
+.back a{
+    color: black;
+    outline: 1px dashed #333;
+    padding: 10px;
+    margin-top: 15px;
+    display: inline-block;
+}
+.back a:hover{
+    background: #333;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
